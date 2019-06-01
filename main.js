@@ -3,7 +3,10 @@ $(document).mousemove(function(event) {
 	mouseX = event.pageX - 7;
 	mouseY = event.pageY - 7;
 });
-
+if ("ontouchstart" in document.documentElement) {
+    $("#TDgame").on("touchstart", onMouseDown);
+    $("#TDgame").on("touchend", onMouseUp);
+}
 //initialize
 const INF = 2147483647;
 var ran = 0;
