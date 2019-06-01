@@ -423,7 +423,7 @@ function Tower(towerType, x, y, lvl) {
 			this.moneyCost = 50;
 			this.rge = 132;
 			this.nowRge = 16;
-			this.atk = 4.8;
+			this.atk = 6;
 			this.func = function() {
 				ctx.beginPath();
 				for (var i = 0;i < enemies.length; i++) {
@@ -443,7 +443,7 @@ function Tower(towerType, x, y, lvl) {
 			this.upgrade = function() {
 				this.hp += 10;
 				this.hpMax += 10;
-				this.atk += 0.96;
+				this.atk += 4;
 			}
 			this.evn = ["Freeze"];
 			break;
@@ -573,7 +573,7 @@ function Tower(towerType, x, y, lvl) {
 			this.upgrade = function() {
 				this.hp += 10;
 				this.hpMax += 10;
-				this.atk += 240;
+				this.atk += 20;
 			}
 			this.evn = [];
 			break;
