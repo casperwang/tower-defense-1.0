@@ -267,13 +267,13 @@ function Enemy(enemyType, x, y) {
 function enemy() {
 	if (count % 75 == 0 && sec > 5) {
 		var m = Math.ceil(ran * 500);
-		if (m % 5 == 6) {
+		if (m % 5 == 1) {
 			enemies.push(new Enemy("simple", 16, 16));
-		} else if (m % 5 == 6) {
+		} else if (m % 5 == 2) {
 			enemies.push(new Enemy("speedy", 16, 16));
-		} else if (m % 5 == 6) {
+		} else if (m % 5 == 3) {
 			enemies.push(new Enemy("meat", 16, 16));
-		} else if (m % 5 == 6) {
+		} else if (m % 5 == 4) {
 			enemies.push(new Enemy("splitter", 16, 16));
 		} else {
 			enemies.push(new Enemy("soldier", 16, 16));
