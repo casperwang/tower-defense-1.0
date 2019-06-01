@@ -4,8 +4,16 @@ $(document).mousemove(function(event) {
 	mouseY = event.pageY - 7;
 });
 if ("ontouchstart" in document.documentElement) {
-    $("#TDgame").on("touchstart", onMouseDown);
-    $("#TDgame").on("touchend", onMouseUp);
+    $("#TDgame").on("touchend", function() {
+        if(nowTower) {
+            onMouseUp();
+        } else {
+            onMouseDown();
+        }
+    });
+} else {
+    $("#TDgame").on("mousedown",onMouseDown);
+    $("#TDgame").on("mouseup",onMouseUp);
 }
 //initialize
 const INF = 2147483647;
@@ -958,8 +966,6 @@ setTimeout(function() {
 	ctx = canvas.getContext("2d");
 	pathBFS();
 	intervalID = setInterval(draw, 1000 / 60);
-	$("#TDgame").on("mousedown",onMouseDown);
-	$("#TDgame").on("mouseup",onMouseUp);
 }, 100);
 
 //$("body").on("keypress",Pause);
